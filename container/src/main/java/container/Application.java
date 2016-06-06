@@ -5,8 +5,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.annotation.Configuration;
 
-
-@SpringBootApplication
 public class Application {
 
 
@@ -18,10 +16,8 @@ public class Application {
         new SpringApplicationBuilder(ParentContext.class)
             .child(products.config.ModuleConfiguration.class)
                 .web(true)
-                .bannerMode(Banner.Mode.OFF)
             .sibling(orders.config.ModuleConfiguration.class)
                 .web(true)
-                .bannerMode(Banner.Mode.OFF)
             .run(args);
     }
 
